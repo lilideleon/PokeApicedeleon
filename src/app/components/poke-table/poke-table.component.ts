@@ -6,7 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-poke-table',
   templateUrl: './poke-table.component.html',
-  styleUrl: './poke-table.component.css'
+  styleUrl: './poke-table.component.scss'
 })
 export class PokeTableComponent {
 
@@ -57,5 +57,10 @@ export class PokeTableComponent {
     if (this.datasourse.paginator) {
       this.datasourse.paginator.firstPage();
     }
+  }
+
+  getRow(row: any)
+  {
+    console.log(row);
   }
 }
