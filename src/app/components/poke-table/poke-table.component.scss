@@ -6,11 +6,11 @@
     text-align: center;
 }
 
-.mat-row :nth-child(even){
+.mat-row:nth-child(even) {
     background-color: gainsboro;
 }
 
-.mat-row :nth-child(odd){
+.mat-row:nth-child(odd) {
     background-color: red;
 }
 

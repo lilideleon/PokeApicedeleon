@@ -1,0 +1,12 @@
+/* styles.css o tu-componente.component.css */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

@@ -2,6 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-poke-table',
@@ -18,10 +21,21 @@ export class PokeTableComponent {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator = {} as MatPaginator;
 
-  constructor (private pokeService:PokemonService){}
+  constructor (
+      private pokeService:PokemonService,
+      private router:Router,
+      private activatedRoute: ActivatedRoute,
+      private viewportScroller: ViewportScroller
+   ){}
 
   ngOnInit():void{
     this.getPokemons();
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      // Desplázate a la parte superior de la página después de la navegación.
+      this.viewportScroller.scrollToPosition([0, 0]);
+    });
   }
 
   getPokemons ()
@@ -62,5 +76,6 @@ export class PokeTableComponent {
   getRow(row: any)
   {
     console.log(row);
+    this.router.navigateByUrl(`pokeDetail/${row.position}`);
   }
 }
