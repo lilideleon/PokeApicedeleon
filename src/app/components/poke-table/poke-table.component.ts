@@ -9,7 +9,8 @@ import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-poke-table',
   templateUrl: './poke-table.component.html',
-  styleUrl: './poke-table.component.scss'
+//  styleUrl: './poke-table.component.scss',
+  styleUrls: ['./poke-table.component.css','./poke-table.component.scss']
 })
 export class PokeTableComponent {
 
