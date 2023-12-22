@@ -7,7 +7,7 @@ import { MatChipsModule } from '@angular/material/chips';
 @Component({
   selector: 'app-poke-detail',
   templateUrl: './poke-detail.component.html',
-  styleUrl: './poke-detail.component.css'
+  styleUrl: './poke-detail.component.scss'
 })
 
 export class PokeDetailComponent implements OnInit {

@@ -1,11 +1,15 @@
-<mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{pokemon.name}}</mat-card-title>
-      <mat-card-subtitle>NO {{pokemon.id}}</mat-card-subtitle>
+<mat-card class="card">
+    <mat-card-header style="background-color: #ffffff;
+    padding-top: 20px;
+    border-radius: 15px;"
+    
+    >
+      <img mat-card-avatar class="header-image" src="{{pokemonImg}}">
+      <mat-card-title style="text-transform: uppercase; color: black;">{{pokemon.name}}</mat-card-title>
+      <mat-card-subtitle style="color: black;">NO {{pokemon.id}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{pokemonImg}}" alt="pokemon" width="500" height="365px">
-    <mat-card-content>
+    <img mat-card-image src="{{pokemonImg}}" alt="pokemon" width="280" height="300px">
+    <mat-card-content style="background-color: #ffffff; border-radius: 15px;">
       <mat-chip-set class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
           <mat-chip class="example-box" cdkDrag>Name: {{pokemon.name}}</mat-chip>
           <mat-chip class="example-box" cdkDrag>Height: {{pokemon.height}}</mat-chip>

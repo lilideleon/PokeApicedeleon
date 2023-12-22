@@ -42,7 +42,7 @@ export class PokeTableComponent {
   getPokemons ()
   {
     let pokemonData;
-    for (let i=1; i<= 150; i++)
+    for (let i=1; i<= 807; i++)
     {
       this.pokeService.getPokemons(i).subscribe(
         res =>{
